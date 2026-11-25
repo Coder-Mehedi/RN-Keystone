@@ -21,7 +21,7 @@ We are building a skeleton, not an app: the smallest repo in which every concern
 | 0 | Prerequisites, scaffold, first run on both platforms | done |
 | 1 | Quality gates: lint, format, hooks, Jest foundation | done |
 | 2 | App shell: config, environments, providers, navigation | done |
-| 3 | Design system: tokens, theming, components | in progress |
+| 3 | Design system: tokens, theming, components | done |
 | 4 | API layer and server state, reference feature | not started |
 | 5 | Client state, storage, auth | not started |
 | 6 | Forms | not started |
@@ -182,13 +182,13 @@ Done when the app boots to a placeholder tab screen in light and dark, and a thr
 
 ### Phase 3 — Design system
 
-- [ ] 3.1 Tailwind v4 with UniWind; design tokens in `global.css` (`@theme`): semantic colors, spacing, radius, type scale, shadows, dark theme
-- [ ] 3.2 Theme facade (`ThemeProvider`, `useTheme`, `useThemeColor`, `cn`): system, light and dark, persisted; status bar, navigation bar and system UI follow it
-- [ ] 3.3 Primitives with owned source: Text, Box, Button, Pressable with haptics, Input, FormField, Checkbox, Switch, Badge, Avatar, Card, Separator, Skeleton, Spinner, Toast, Dialog, Sheet, Icon, Image
-- [ ] 3.4 Composite components: Screen (safe area, edge-to-edge, keyboard), List (FlashList with empty, error and offline states)
-- [ ] 3.5 Native controls from `@expo/ui` where they beat custom UI: bottom sheet, picker, segmented control, date and time picker
-- [ ] 3.6 Accessibility: roles and labels, 44pt touch targets, font scaling, contrast-checked tokens, RTL
-- [ ] 3.7 Component gallery screen in `(dev)` with theme and font-scale switchers
+- [x] 3.1 Tailwind v4 with UniWind; design tokens in `global.css` (`@theme`): semantic colors, spacing, radius, type scale, shadows, dark theme
+- [x] 3.2 Theme facade (`ThemeProvider`, `useTheme`, `useThemeColor`, `cn`): system, light and dark, persisted; status bar, navigation bar and system UI follow it
+- [x] 3.3 Primitives with owned source: Text, Box, Button, Pressable with haptics, Input, FormField, Checkbox, Switch, Badge, Avatar, Card, Separator, Skeleton, Spinner, Toast, Dialog, Sheet, Icon, Image
+- [x] 3.4 Composite components: Screen (safe area, edge-to-edge, keyboard), List (FlashList with empty, error and offline states)
+- [x] 3.5 Native controls from `@expo/ui` where they beat custom UI: bottom sheet, picker, segmented control, date and time picker
+- [x] 3.6 Accessibility: roles and labels, 44pt touch targets, font scaling, contrast-checked tokens, RTL
+- [x] 3.7 Component gallery screen in `(dev)` with theme and font-scale switchers
 
 Done when the gallery renders on iOS and Android in light and dark, and switching theme at runtime updates the whole tree.
 

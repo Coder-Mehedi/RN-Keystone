@@ -6,6 +6,8 @@ import { ColorsSection } from './colors-section';
 import { ControlsSection } from './controls-section';
 import { DataDisplaySection } from './data-display-section';
 import { ElevationSection } from './elevation-section';
+import { FontScaleSection } from './font-scale-section';
+import { NativeControlsSection } from './native-controls-section';
 import { OverlaySection } from './overlay-section';
 import { TypographySection } from './typography-section';
 
@@ -22,11 +24,13 @@ export function GalleryScreen() {
       </Text>
 
       <ThemeSwitcher />
+      <FontScaleSection />
       <ColorsSection />
       <TypographySection />
       <ControlsSection />
       <DataDisplaySection />
       <OverlaySection />
+      <NativeControlsSection />
       <ElevationSection />
     </Screen>
   );
