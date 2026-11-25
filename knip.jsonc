@@ -13,8 +13,6 @@
     "expo-device",
     "expo-glass-effect",
     "expo-web-browser",
-    // Phase 4 (server state):
-    "@tanstack/react-query",
     // Phase 6 (forms):
     "@hookform/resolvers",
     "react-hook-form",
@@ -26,7 +24,6 @@
     "src/shared/ui/form-field.tsx",
     "src/shared/ui/icon.tsx",
     "src/shared/ui/index.ts",
-    "src/shared/ui/list.tsx",
     "src/shared/ui/native-date-picker.tsx",
     "src/shared/ui/native-picker.tsx",
   ],

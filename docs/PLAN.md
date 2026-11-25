@@ -22,7 +22,7 @@ We are building a skeleton, not an app: the smallest repo in which every concern
 | 1 | Quality gates: lint, format, hooks, Jest foundation | done |
 | 2 | App shell: config, environments, providers, navigation | done |
 | 3 | Design system: tokens, theming, components | done |
-| 4 | API layer and server state, reference feature | not started |
+| 4 | API layer and server state, reference feature | in progress |
 | 5 | Client state, storage, auth | not started |
 | 6 | Forms | not started |
 | 7 | Logging and monitoring | not started |
@@ -194,14 +194,14 @@ Done when the gallery renders on iOS and Android in light and dark, and switchin
 
 ### Phase 4 — API layer and server state
 
-- [ ] 4.1 HTTP client on `expo/fetch`: typed requests, JSON handling, timeout, cancellation, correlation ID
-- [ ] 4.2 Middleware chain: auth header, single-flight token refresh on 401 with queued replay, retry with backoff for idempotent requests and network errors, redacted logging in development
-- [ ] 4.3 Error model: `ApiError` (status, machine-readable code, field errors), `NetworkError`, `TimeoutError`, mapped to translation keys
-- [ ] 4.4 Zod validation at the boundary, schemas next to endpoints
+- [x] 4.1 HTTP client on `expo/fetch`: typed requests, JSON handling, timeout, cancellation, correlation ID
+- [x] 4.2 Middleware chain: auth header, single-flight token refresh on 401 with queued replay, retry with backoff for idempotent requests and network errors, redacted logging in development
+- [x] 4.3 Error model: `ApiError` (status, machine-readable code, field errors), `NetworkError`, `TimeoutError`, mapped to translation keys
+- [x] 4.4 Zod validation at the boundary, schemas next to endpoints
 - [ ] 4.5 TanStack Query setup: defaults, `queryOptions` convention, key factories, suspense on screens, infinite queries, optimistic mutations with rollback, offline cache persistence, `onlineManager` bound to NetInfo
-- [ ] 4.6 Mock transport for development builds, tests and E2E (fixtures, latency, failure switches), selected by `EXPO_PUBLIC_API_MOCK`
+- [x] 4.6 Mock transport for development builds, tests and E2E (fixtures, latency, failure switches), selected by `EXPO_PUBLIC_API_MOCK`
 - [ ] 4.7 OpenAPI path: `gen:api` script with a sample spec
-- [ ] 4.8 Reference feature `posts`: list (paged, pull to refresh, offline, empty and error states), detail, create (form with optimistic update)
+- [x] 4.8 Reference feature `posts`: list (paged, pull to refresh, offline, empty and error states), detail, create (form with optimistic update)
 
 Done when the reference feature works against the mock with the network on and off, and refresh and retry behaviour are unit-tested.
 

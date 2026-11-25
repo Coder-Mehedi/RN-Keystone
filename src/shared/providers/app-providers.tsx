@@ -1,5 +1,7 @@
-import type { ReactNode } from 'react';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { useState, type ReactNode } from 'react';
 
+import { createQueryClient } from '@/shared/api/query-client';
 import { ThemeProvider } from '@/shared/theme';
 import { ToastProvider } from '@/shared/ui/toast';
 
@@ -8,9 +10,13 @@ import { ToastProvider } from '@/shared/ui/toast';
  * The app is wrapped once, at the root. Tests wrap components with it too.
  */
 export function AppProviders({ children }: { children: ReactNode }) {
+  const [queryClient] = useState(createQueryClient);
+
   return (
-    <ThemeProvider>
-      <ToastProvider>{children}</ToastProvider>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider>
+        <ToastProvider>{children}</ToastProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }

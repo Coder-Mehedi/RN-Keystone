@@ -11,6 +11,10 @@ export function HomeScreen() {
       <Text variant="bodyMuted">This is the starting point of the app.</Text>
       <Text variant="caption">Screens go in src/screens, features in src/features.</Text>
 
+      <Button variant="outline" className="self-start" onPress={() => router.push('/posts')}>
+        Open posts
+      </Button>
+
       {__DEV__ ? (
         <Button variant="outline" className="self-start" onPress={() => router.push('/menu')}>
           Developer tools
