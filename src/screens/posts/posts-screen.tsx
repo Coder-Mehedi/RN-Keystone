@@ -5,7 +5,9 @@ import { Text } from '@/shared/ui/text';
 export function PostsScreen() {
   return (
     <Screen className="flex-1">
-      <Text variant="display">Posts</Text>
+      <Text variant="display" className="mt-8">
+        Posts
+      </Text>
       <Text variant="bodyMuted">Reference feature using the API layer and TanStack Query.</Text>
       <PostList />
     </Screen>

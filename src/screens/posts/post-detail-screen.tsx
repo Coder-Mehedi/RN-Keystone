@@ -30,7 +30,7 @@ export function PostDetailScreen() {
 
   return (
     <Screen scroll>
-      <Text variant="display">{query.data.title}</Text>
+      <Text variant="display">{query.data.title}a</Text>
       <Text variant="caption">{new Date(query.data.createdAt).toLocaleString()}</Text>
       <Text variant="body">{query.data.body}</Text>
     </Screen>

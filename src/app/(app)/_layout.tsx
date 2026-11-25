@@ -1,5 +1,10 @@
-import { AppTabs } from '@/screens/app-shell/app-tabs';
+import { Stack } from 'expo-router';
 
 export default function AppLayout() {
-  return <AppTabs />;
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="posts" />
+    </Stack>
+  );
 }

@@ -43,8 +43,8 @@ export function Screen({ scroll = false, className, children, ...rest }: ScreenP
   }
 
   return (
-    <SafeAreaView edges={['top', 'bottom']}>
-      <View {...rest} className={cn('flex-1 gap-4 bg-background px-4 pb-4', className)}>
+    <SafeAreaView edges={isUnderHeader ? ['bottom'] : ['top', 'bottom']} style={{ flex: 1 }}>
+      <View {...rest} className={cn('flex-1 gap-4 bg-background px-4 pt-4 pb-4', className)}>
         {children}
       </View>
     </SafeAreaView>
