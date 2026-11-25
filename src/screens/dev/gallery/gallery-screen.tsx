@@ -3,7 +3,11 @@ import { Text } from '@/shared/ui/text';
 import { ThemeSwitcher } from '@/shared/ui/theme-switcher';
 
 import { ColorsSection } from './colors-section';
+import { ControlsSection } from './controls-section';
+import { DataDisplaySection } from './data-display-section';
 import { ElevationSection } from './elevation-section';
+import { OverlaySection } from './overlay-section';
+import { TypographySection } from './typography-section';
 
 /**
  * The design system on one page, for checking every component in both themes and at any text
@@ -19,6 +23,10 @@ export function GalleryScreen() {
 
       <ThemeSwitcher />
       <ColorsSection />
+      <TypographySection />
+      <ControlsSection />
+      <DataDisplaySection />
+      <OverlaySection />
       <ElevationSection />
     </Screen>
   );

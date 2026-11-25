@@ -1,11 +1,16 @@
 import type { ReactNode } from 'react';
 
 import { ThemeProvider } from '@/shared/theme';
+import { ToastProvider } from '@/shared/ui/toast';
 
 /**
  * Everything a screen can rely on being there.
  * The app is wrapped once, at the root. Tests wrap components with it too.
  */
 export function AppProviders({ children }: { children: ReactNode }) {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider>
+      <ToastProvider>{children}</ToastProvider>
+    </ThemeProvider>
+  );
 }

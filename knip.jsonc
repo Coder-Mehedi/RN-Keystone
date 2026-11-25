@@ -12,7 +12,6 @@
     // Phase 3 (design system):
     "expo-device",
     "expo-glass-effect",
-    "expo-image",
     "expo-web-browser",
     // Phase 4 (server state):
     "@tanstack/react-query",
@@ -22,14 +21,13 @@
   ],
 
   "ignore": [
-    // Phase 3 design-system primitives scaffolded before the screens that use them.
-    "src/shared/ui/avatar.tsx",
-    "src/shared/ui/badge.tsx",
-    "src/shared/ui/checkbox.tsx",
-    "src/shared/ui/image.tsx",
-    "src/shared/ui/input.tsx",
-    "src/shared/ui/separator.tsx",
-    "src/shared/ui/skeleton.tsx",
-    "src/shared/ui/switch.tsx",
+    // Phase 3 primitives not yet wired into product screens.
+    "src/shared/ui/box.tsx",
+    "src/shared/ui/form-field.tsx",
+    "src/shared/ui/icon.tsx",
+    "src/shared/ui/index.ts",
+    "src/shared/ui/list.tsx",
+    "src/shared/ui/native-date-picker.tsx",
+    "src/shared/ui/native-picker.tsx",
   ],
 }

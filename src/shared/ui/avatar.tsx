@@ -7,7 +7,7 @@ import { Image } from './image';
 import { Text } from './text';
 
 /** The first letters of the first two words: "Ada Lovelace" → "AL", "ada" → "A". */
-export function initialsOf(name: string): string {
+function initialsOf(name: string): string {
   return name
     .trim()
     .split(/\s+/)
