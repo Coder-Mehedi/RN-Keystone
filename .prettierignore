@@ -1,0 +1,19 @@
+# Managed by the package manager
+node_modules/
+bun.lock
+
+# Generated native projects (expo prebuild)
+ios/
+android/
+
+# Build output
+dist/
+coverage/
+.expo/
+
+# Generated type files
+expo-env.d.ts
+src/uniwind-types.d.ts
+
+# Project planning documents are written, not formatted
+docs/PLAN.md

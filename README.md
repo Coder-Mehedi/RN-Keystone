@@ -1,56 +1,65 @@
-# Welcome to your Expo app 👋
+# React Native App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Expo/React Native starter app (Bun, TypeScript, Expo Router).
 
-## Get started
+## Stack
 
-1. Install dependencies
+- **Expo SDK 58** / React Native 0.88 / React 19 / TypeScript 6
+- **Routing:** Expo Router (`src/app`)
+- **Styling/UI:** Uniwind + Tailwind CSS 4, custom shared UI components
+- **State/Storage:** Zustand, MMKV, SecureStore, NetInfo
+- **Quality:** ESLint, Prettier, Jest, Knip, expo-doctor, Husky/commitlint
+- **Native/Build:** EAS config, dev client, Sentry plugin, expo-updates
 
-   ```bash
-   npm install
-   ```
+## Project Structure
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+src/
+  app/        # Route files only (Expo Router)
+  screens/    # Screen composition
+  features/   # Feature modules (public API via index.ts)
+  entities/   # Shared business entities
+  shared/     # api, ui, lib, config, storage, theme, providers
+tests/        # Jest setup and tests
+docs/         # Plan and ADRs
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Import boundaries are enforced by ESLint (`eslint-plugin-boundaries`).
 
-### Other setup steps
+## Current App State
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+- Root app shell with providers, splash handling, error boundaries, offline banner.
+- Route groups: `(app)`, `(auth)`, `(dev)`, `+not-found`.
+- Native tabs for Home/Settings.
+- Dev tools screens: menu, dependency check, component gallery.
+- Theme support (system/light/dark) via shared theme provider.
+- i18n has been removed; UI copy is currently hardcoded.
 
-## Learn more
+## Commands
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+bun install
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+bun run start          # Metro
+bun run ios            # iOS dev build/simulator
+bun run android        # Android dev build/emulator
 
-## Join the community
+bun run typecheck
+bun run lint
+bun run format:check
+bun run test
+bun run knip:check
+bun run doctor
+bun run check          # full verification
+```
 
-Join our community of developers creating universal apps.
+## Environment
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Committed: `.env.development`, `.env.production`
+- Local overrides (ignored): `.env*.local`
+- Env is validated in `src/shared/config/env.ts`; do not put secrets in `EXPO_PUBLIC_*`.
+
+## Notes
+
+- `ios/` and `android/` are generated (CNG) and gitignored; regenerate with `bunx expo prebuild --clean` after native/config changes.
+- Install packages with `bunx expo install <package>` for SDK-compatible versions.

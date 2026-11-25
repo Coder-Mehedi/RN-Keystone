@@ -1,0 +1,35 @@
+{
+  // Route files are loaded by the file-based router, and test helpers are loaded by Jest,
+  // so no import statement points at them. Keep Knip from treating them as dead code.
+  "entry": ["src/app/**/*.{js,jsx,ts,tsx}", "tests/**/*.{js,ts,tsx}"],
+
+  "ignoreDependencies": [
+    // Provided through jest-expo.
+    "babel-jest",
+
+    // Installed up front so the whole native dependency graph could be proven in Phase 0.
+    // Each line is removed when its phase starts using the package.
+    // Phase 3 (design system):
+    "expo-device",
+    "expo-glass-effect",
+    "expo-image",
+    "expo-web-browser",
+    // Phase 4 (server state):
+    "@tanstack/react-query",
+    // Phase 6 (forms):
+    "@hookform/resolvers",
+    "react-hook-form",
+  ],
+
+  "ignore": [
+    // Phase 3 design-system primitives scaffolded before the screens that use them.
+    "src/shared/ui/avatar.tsx",
+    "src/shared/ui/badge.tsx",
+    "src/shared/ui/checkbox.tsx",
+    "src/shared/ui/image.tsx",
+    "src/shared/ui/input.tsx",
+    "src/shared/ui/separator.tsx",
+    "src/shared/ui/skeleton.tsx",
+    "src/shared/ui/switch.tsx",
+  ],
+}

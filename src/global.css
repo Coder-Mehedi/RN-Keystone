@@ -1,9 +1,93 @@
-:root {
-  --font-display:
-    Spline Sans, Inter, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol, Noto Color Emoji;
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  --font-rounded: 'SF Pro Rounded', 'Hiragino Maru Gothic ProN', Meiryo, 'MS PGothic', sans-serif;
-  --font-serif: Georgia, 'Times New Roman', serif;
+@import 'tailwindcss';
+@import 'uniwind';
+
+/*
+ * Design tokens.
+ *
+ * Components use these names (`bg-background`, `text-foreground`, `rounded-card`) and never
+ * palette colours (`bg-blue-600`) directly. To rebrand the app, change the values below.
+ *
+ * Colours come from Tailwind's palette (node_modules/tailwindcss/theme.css), copied as
+ * literals. Both themes must define exactly the same variables.
+ */
+@layer theme {
+  :root {
+    /* Light theme. */
+    @variant light {
+      /* Page and text. */
+      --color-background: #fff;
+      --color-foreground: oklch(14.1% 0.005 285.823);
+
+      /* Raised surfaces: cards, sheets, menus. */
+      --color-card: #fff;
+      --color-card-foreground: oklch(14.1% 0.005 285.823);
+
+      /* The brand colour: the main action on a screen, and selected items. */
+      --color-primary: oklch(54.6% 0.245 262.881);
+      --color-primary-foreground: #fff;
+
+      /* A quieter action, and pressed states. */
+      --color-secondary: oklch(96.7% 0.001 286.375);
+      --color-secondary-foreground: oklch(21% 0.006 285.885);
+      --color-accent: oklch(96.7% 0.001 286.375);
+      --color-accent-foreground: oklch(21% 0.006 285.885);
+
+      /* Secondary text, placeholders, disabled items. */
+      --color-muted: oklch(96.7% 0.001 286.375);
+      --color-muted-foreground: oklch(55.2% 0.016 285.938);
+
+      /* Destructive actions and error messages. */
+      --color-destructive: oklch(57.7% 0.245 27.325);
+      --color-destructive-foreground: #fff;
+
+      /* Successful outcomes. */
+      --color-success: oklch(59.6% 0.145 163.225);
+      --color-success-foreground: #fff;
+
+      /* Lines and inputs. */
+      --color-border: oklch(92% 0.004 286.32);
+      --color-input: oklch(87.1% 0.006 286.286);
+
+      /* The focus ring. */
+      --color-ring: oklch(54.6% 0.245 262.881);
+
+      /* Corner radii. */
+      --radius-control: 0.5rem;
+      --radius-card: 0.75rem;
+    }
+
+    /* Dark theme. Same names, so components never branch on the theme themselves. */
+    @variant dark {
+      --color-background: oklch(14.1% 0.005 285.823);
+      --color-foreground: oklch(98.5% 0 none);
+
+      --color-card: oklch(21% 0.006 285.885);
+      --color-card-foreground: oklch(98.5% 0 none);
+
+      --color-primary: oklch(62.3% 0.214 259.815);
+      --color-primary-foreground: #fff;
+
+      --color-secondary: oklch(27.4% 0.006 286.033);
+      --color-secondary-foreground: oklch(98.5% 0 none);
+      --color-accent: oklch(27.4% 0.006 286.033);
+      --color-accent-foreground: oklch(98.5% 0 none);
+
+      --color-muted: oklch(27.4% 0.006 286.033);
+      --color-muted-foreground: oklch(70.5% 0.015 286.067);
+
+      --color-destructive: oklch(63.7% 0.237 25.331);
+      --color-destructive-foreground: #fff;
+
+      --color-success: oklch(69.6% 0.17 162.48);
+      --color-success-foreground: #fff;
+
+      --color-border: oklch(27.4% 0.006 286.033);
+      --color-input: oklch(37% 0.013 285.805);
+
+      --color-ring: oklch(62.3% 0.214 259.815);
+
+      --radius-control: 0.5rem;
+      --radius-card: 0.75rem;
+    }
+  }
 }
